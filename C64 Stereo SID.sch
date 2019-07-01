@@ -105,8 +105,6 @@ Text Label 1225 4000 2    60   ~ 0
 Phi2
 Text Label 1225 4100 2    60   ~ 0
 R/~W
-Text Label 1225 4200 2    60   ~ 0
-~CS
 Text Label 1225 4300 2    60   ~ 0
 A0
 Text Label 1225 4400 2    60   ~ 0
@@ -159,8 +157,6 @@ Entry Wire Line
 Entry Wire Line
 	775  4300 675  4200
 Entry Wire Line
-	775  4200 675  4100
-Entry Wire Line
 	775  4100 675  4000
 Entry Wire Line
 	775  4000 675  3900
@@ -212,8 +208,6 @@ Text Label 4750 5500 2    60   ~ 0
 Phi2
 Text Label 4750 5600 2    60   ~ 0
 R/~W
-Text Label 4750 5700 2    60   ~ 0
-~CS
 Text Label 4750 5800 2    60   ~ 0
 A0
 Text Label 4750 5900 2    60   ~ 0
@@ -243,8 +237,6 @@ Entry Wire Line
 	4300 5900 4200 5800
 Entry Wire Line
 	4300 5800 4200 5700
-Entry Wire Line
-	4300 5700 4200 5600
 Entry Wire Line
 	4300 5600 4200 5500
 Entry Wire Line
@@ -499,8 +491,8 @@ Text GLabel 6225 1425 2    60   Input ~ 0
 EXT_IN2
 NoConn ~ 6225 1625
 NoConn ~ 6225 1725
-Text GLabel 4600 1925 0    60   Input ~ 0
-~CS2
+Text GLabel 4650 1925 0    60   Input ~ 0
+~CS2_IC
 Text Label 6250 5100 0    60   ~ 0
 AUD_OUT
 $Comp
@@ -547,8 +539,8 @@ F 3 "" H 8875 2375 50  0001 C CNN
 	1    8875 2375
 	1    0    0    -1  
 $EndComp
-Text GLabel 4750 3050 0    60   Output ~ 0
-~CS2
+Text GLabel 4850 3050 0    60   Output ~ 0
+~CS2_IN
 $Comp
 L R R8
 U 1 1 5D1999B1
@@ -685,8 +677,6 @@ Wire Wire Line
 Wire Wire Line
 	1250 4100 775  4100
 Wire Wire Line
-	1250 4200 775  4200
-Wire Wire Line
 	1250 4300 775  4300
 Wire Wire Line
 	1250 4400 775  4400
@@ -742,8 +732,6 @@ Wire Wire Line
 	4775 5500 4300 5500
 Wire Wire Line
 	4775 5600 4300 5600
-Wire Wire Line
-	4775 5700 4300 5700
 Wire Wire Line
 	4775 5800 4300 5800
 Wire Wire Line
@@ -857,8 +845,6 @@ Wire Wire Line
 Wire Bus Line
 	6800 1925 6800 3525
 Wire Wire Line
-	4600 1925 4775 1925
-Wire Wire Line
 	4700 1150 4700 1225
 Wire Wire Line
 	4700 1225 4775 1225
@@ -881,7 +867,7 @@ Wire Wire Line
 Wire Wire Line
 	8875 2300 8875 2375
 Wire Wire Line
-	4750 3050 4825 3050
+	4850 3050 4925 3050
 Wire Wire Line
 	6225 1325 7875 1325
 Wire Wire Line
@@ -950,16 +936,53 @@ $EndComp
 Wire Wire Line
 	4425 3075 4425 3150
 Wire Wire Line
-	4425 3150 4825 3150
+	4425 3150 4925 3150
 $Comp
 L Conn_01x02 J4
 U 1 1 5D1ADE1F
-P 5025 3050
-F 0 "J4" H 5025 3150 50  0000 C CNN
-F 1 "~CS" H 5025 2850 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 5025 3050 50  0001 C CNN
-F 3 "" H 5025 3050 50  0001 C CNN
-	1    5025 3050
+P 5125 3050
+F 0 "J4" H 5125 3150 50  0000 C CNN
+F 1 "~CS" H 5125 2850 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 5125 3050 50  0001 C CNN
+F 3 "" H 5125 3050 50  0001 C CNN
+	1    5125 3050
 	1    0    0    -1  
 $EndComp
+Text GLabel 1100 4200 0    60   Output ~ 0
+~CS1_IN
+$Comp
+L Conn_02x02_Odd_Even J5
+U 1 1 5D1A537A
+P 5425 4100
+F 0 "J5" H 5475 4200 50  0000 C CNN
+F 1 "SWAP_SID" H 5475 3900 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x02_Pitch2.54mm" H 5425 4100 50  0001 C CNN
+F 3 "" H 5425 4100 50  0001 C CNN
+	1    5425 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 1925 4775 1925
+Text GLabel 4650 5700 0    60   Input ~ 0
+~CS1_IC
+Wire Wire Line
+	4650 5700 4775 5700
+Wire Wire Line
+	1100 4200 1250 4200
+Text GLabel 5150 4100 0    60   Output ~ 0
+~CS2_IC
+Text GLabel 5800 4200 2    60   Output ~ 0
+~CS1_IC
+Text GLabel 5800 4100 2    60   Input ~ 0
+~CS2_IN
+Text GLabel 5150 4200 0    60   Input ~ 0
+~CS1_IN
+Wire Wire Line
+	5150 4100 5225 4100
+Wire Wire Line
+	5150 4200 5225 4200
+Wire Wire Line
+	5725 4100 5800 4100
+Wire Wire Line
+	5725 4200 5800 4200
 $EndSCHEMATC
