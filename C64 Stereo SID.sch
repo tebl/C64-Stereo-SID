@@ -499,7 +499,7 @@ Text GLabel 6225 1425 2    60   Input ~ 0
 EXT_IN2
 NoConn ~ 6225 1625
 NoConn ~ 6225 1725
-Text GLabel 4600 1925 0    60   Output ~ 0
+Text GLabel 4600 1925 0    60   Input ~ 0
 ~CS2
 Text Label 6250 5100 0    60   ~ 0
 AUD_OUT
@@ -507,23 +507,23 @@ $Comp
 L C_Small C71
 U 1 1 5D19785E
 P 4600 1150
-F 0 "C71" V 4650 1200 50  0000 L CNN
-F 1 "470pF" V 4750 1150 50  0000 C CNN
+F 0 "C71" V 4700 1150 50  0000 C CNN
+F 1 "470pF" V 4500 1150 50  0000 C CNN
 F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 4600 1150 50  0001 C CNN
 F 3 "" H 4600 1150 50  0001 C CNN
 	1    4600 1150
-	0    -1   -1   0   
+	0    1    1    0   
 $EndComp
 $Comp
 L C_Small C70
 U 1 1 5D1979D4
 P 4350 1150
-F 0 "C70" V 4400 1200 50  0000 L CNN
-F 1 "470pF" V 4500 1150 50  0000 C CNN
+F 0 "C70" V 4450 1150 50  0000 C CNN
+F 1 "470pF" V 4250 1150 50  0000 C CNN
 F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 4350 1150 50  0001 C CNN
 F 3 "" H 4350 1150 50  0001 C CNN
 	1    4350 1150
-	0    -1   -1   0   
+	0    1    1    0   
 $EndComp
 $Comp
 L Conn_01x02 J3
@@ -547,18 +547,7 @@ F 3 "" H 8875 2375 50  0001 C CNN
 	1    8875 2375
 	1    0    0    -1  
 $EndComp
-$Comp
-L Conn_01x01 J4
-U 1 1 5D19887E
-P 4975 3050
-F 0 "J4" H 4975 3150 50  0000 C CNN
-F 1 "~CS" H 4975 2950 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 4975 3050 50  0001 C CNN
-F 3 "" H 4975 3050 50  0001 C CNN
-	1    4975 3050
-	1    0    0    -1  
-$EndComp
-Text GLabel 4700 3050 0    60   Input ~ 0
+Text GLabel 4750 3050 0    60   Output ~ 0
 ~CS2
 $Comp
 L R R8
@@ -619,12 +608,12 @@ $Comp
 L C_Small C76
 U 1 1 5D19A9A8
 P 7875 2025
-F 0 "C76" H 7725 1950 50  0000 L CNN
-F 1 "470pF" V 7975 2025 50  0000 C CNN
+F 0 "C76" H 7900 2100 50  0000 L CNN
+F 1 "470pF" V 7750 2025 50  0000 C CNN
 F 2 "Capacitors_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 7875 2025 50  0001 C CNN
 F 3 "" H 7875 2025 50  0001 C CNN
 	1    7875 2025
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L C_Small C74
@@ -892,7 +881,7 @@ Wire Wire Line
 Wire Wire Line
 	8875 2300 8875 2375
 Wire Wire Line
-	4700 3050 4775 3050
+	4750 3050 4825 3050
 Wire Wire Line
 	6225 1325 7875 1325
 Wire Wire Line
@@ -947,4 +936,30 @@ Text Notes 5350 2025 0    60   ~ 0
 SID #2
 Text Notes 5350 5800 0    60   ~ 0
 SID #1
+$Comp
+L VCC #PWR017
+U 1 1 5D1ADB09
+P 4425 3075
+F 0 "#PWR017" H 4425 2925 50  0001 C CNN
+F 1 "VCC" H 4425 3225 50  0000 C CNN
+F 2 "" H 4425 3075 50  0001 C CNN
+F 3 "" H 4425 3075 50  0001 C CNN
+	1    4425 3075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4425 3075 4425 3150
+Wire Wire Line
+	4425 3150 4825 3150
+$Comp
+L Conn_01x02 J4
+U 1 1 5D1ADE1F
+P 5025 3050
+F 0 "J4" H 5025 3150 50  0000 C CNN
+F 1 "~CS" H 5025 2850 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 5025 3050 50  0001 C CNN
+F 3 "" H 5025 3050 50  0001 C CNN
+	1    5025 3050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
