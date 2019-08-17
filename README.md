@@ -1,1 +1,7 @@
-C64 Stereo SID
+# C64 Stereo SID
+
+There are many Stereo SID boards out there, but this one is mine - mostly because I did not feel like tracking down or paying premium to get one of those wirewrap sockets. Using a simple board like this will put a second SID chip at $DE00 and add 3 voices to your system, with suitable software and a selection of SID files you can play music on your system like never experienced before (your mileage may vary)! For everyday use you can use it in pseudo stereo-mode by having each SID play the same thing simultaniously.
+
+As with anything dealing with SID chips you should know what you are doing, this board does not deal with the specific power requirements used between SID types and putting the wrong thing in there will certainly kill the chip you value the most or both of them! Personally I built the board with the intention of using it with substitutes like SwinSID, SwinSID Ultimate and ARMsid and all those should be perfectly safe to use in any combination (that way you don't deprive a C64 of its audio qualities).
+
+The stock computer does not have any way of connecting up the audio from the second SID, the standard A/V cables are naturally mono as that is what the system was designed to be. This means you'll need to add relevant connectors to your system such as RCA sockets, either in the form of custom-made cables hanging out the back or by drilling and adding the connectors to your case (please don't drill into a case and expect me to buy it later). A third option is to replace the modulator with one that adds something like a 3.5mm stereo audio connector, which is what I did with my other PCB for [C64-Modulator-Replacement](https://github.com/tebl/C64-Modulator-Replacement).
