@@ -13,11 +13,18 @@ Start by studying the PCB, both sides and perform dry fits to see that you have 
 
 With a lot going on for such a tiny board, you'd need to pay some attention to the sequence of components getting soldered in. The list below is the one I recommend, note that with some sockets you'll have less space underneath and it'll be a lot easier getting it into place if you trim the pins after they have been soldered into place. When aligning the two 14-pin (round) pin-headers I recommend using a round-pin socket to help keep them straight, that way you won't get issues trying to install it into the Commodore 64.
 
-1. Resistors
+1. Check errata below
+2. Resistors, see note on dowmixing below.
 2. 14 pin-headers on the marked A1 as well as a similar one on the right side (solder on reverse-side). Refer to [this image](https://raw.githubusercontent.com/tebl/C64-Stereo-SID/master/gallery/2019-07-30%2016.36.22.jpg) for reference.
 3. Sockets for U1/U2
 4. Capacitors according to values on silkscreen, note the different value for C70/C71 according to the type of SID chips that belong in the system you are installing it.
 5. Remaining components
+
+### Downmixing
+The board has components for downmixing the audio coming out of both SID chips down to a mono signal, via the installation of two resistors - R2 and R3. If you want your stereo to be in, well - stereo - then the suggested route is installing a wire in place of R2 and leaving the spot for R3 blank.  
+
+### Errata
+- Revision B has a missing trace between the top of R1 and the bottom of D1, you can add a wire between them to restore functionality when using two chips in pseudo-stereo mode. For reference, the missing wire is the only green wire in the following [picture](https://github.com/tebl/C64-Stereo-SID/raw/master/gallery/revision_b_fix.PNG). 
 
 ## Installing the board
 The board should slot nicely into the existing socket for the previous SID, this is removed and usually installed as the primary SID on the Stereo SID board. There may be components such as capacitors that interfere with the new board, take care to examine and gently bend away those that are in the way before firmly pushing it into the socket.
@@ -56,7 +63,9 @@ Pin headers you order in bulk and snap off parts as needed, but note that you sh
 | D1, D2      | 1N4148 small signal diode             |     2 |
 | J1-J3       | 3-pin straight header                 |     3 |
 | J4          | 2-pin straight header                 |     1 |
-| R1-R3,R12   | 1k ohm resistor                       |     4 | 
+| R1,R12      | 1k ohm resistor                       |     2 | 
+| R2          | Install wire for standard stereo      |   (1) |
+| R2, R3      | 1k ohm resistor (downmix to mono)     |   (2) |
 | R8*         | 1k ohm resistor                       |   (1) | 
 | R9          | 10k ohm resistor                      |     1 | 
 | Q1          | 2N2222 transistor (TO-92)             |     1 |
@@ -64,4 +73,5 @@ Pin headers you order in bulk and snap off parts as needed, but note that you sh
 | U1, U2      | 28-pin wide socket                    |     2 |
 
 \* R8 - not installed on motherboards that use 8580 SID chips 
+
 ** C70/C71 - Install either both 470pF for motherboards supporting 6581, 22nF for motherboards supporting 8580.
