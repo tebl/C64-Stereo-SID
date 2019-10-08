@@ -324,25 +324,8 @@ Entry Wire Line
 	6800 6625 6700 6725
 Text Label 6675 6725 2    60   ~ 0
 EXT_IN
-$Comp
-L Conn_01x02 J2
-U 1 1 5D194DC1
-P 6025 2950
-F 0 "J2" H 6025 3050 50  0000 C CNN
-F 1 "EXT_IN_SEL2" V 6125 2950 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 6025 2950 50  0001 C CNN
-F 3 "" H 6025 2950 50  0001 C CNN
-	1    6025 2950
-	-1   0    0    -1  
-$EndComp
-Entry Wire Line
-	6800 2850 6700 2950
-Text Label 6675 2950 2    60   ~ 0
-EXT_IN
 Text GLabel 6300 6825 2    60   Output ~ 0
 EXT_IN1
-Text GLabel 6300 3050 2    60   Output ~ 0
-EXT_IN2
 $Comp
 L MOS_6581 U2
 U 1 1 5D196268
@@ -447,8 +430,6 @@ F 3 "" H 6600 1525 50  0001 C CNN
 	1    6600 1525
 	0    1    1    0   
 $EndComp
-Text GLabel 6225 1425 2    60   Input ~ 0
-EXT_IN2
 NoConn ~ 6225 1625
 NoConn ~ 6225 1725
 Text GLabel 4650 1925 0    60   Input ~ 0
@@ -478,12 +459,12 @@ $EndComp
 $Comp
 L GND #PWR010
 U 1 1 5D1985DD
-P 9600 5525
-F 0 "#PWR010" H 9600 5275 50  0001 C CNN
-F 1 "GND" H 9600 5375 50  0000 C CNN
-F 2 "" H 9600 5525 50  0001 C CNN
-F 3 "" H 9600 5525 50  0001 C CNN
-	1    9600 5525
+P 9600 5625
+F 0 "#PWR010" H 9600 5375 50  0001 C CNN
+F 1 "GND" H 9600 5475 50  0000 C CNN
+F 2 "" H 9600 5625 50  0001 C CNN
+F 3 "" H 9600 5625 50  0001 C CNN
+	1    9600 5625
 	1    0    0    -1  
 $EndComp
 Text GLabel 4850 2950 0    60   Output ~ 0
@@ -820,11 +801,7 @@ Wire Wire Line
 Wire Wire Line
 	6225 6725 6700 6725
 Wire Wire Line
-	6225 2950 6700 2950
-Wire Wire Line
 	6225 6825 6300 6825
-Wire Wire Line
-	6225 3050 6300 3050
 Wire Notes Line
 	6000 6825 6000 6725
 Wire Notes Line
@@ -892,9 +869,9 @@ Wire Wire Line
 Wire Wire Line
 	9200 2200 9350 2200
 Wire Wire Line
-	9600 5375 10100 5375
+	9600 5475 10100 5475
 Wire Wire Line
-	9600 5375 9600 5525
+	9600 5475 9600 5625
 Wire Wire Line
 	4850 2950 4925 2950
 Wire Wire Line
@@ -1023,24 +1000,20 @@ AUD_OUT
 Text GLabel 9350 2200 2    60   Output ~ 0
 AUD_R
 $Comp
-L Conn_01x03 J3
+L Conn_01x02 J3
 U 1 1 5D44DABC
 P 10300 5375
 F 0 "J3" H 10300 5575 50  0000 C CNN
 F 1 "AUD_OUT" V 10400 5375 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 10300 5375 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 10300 5375 50  0001 C CNN
 F 3 "" H 10300 5375 50  0001 C CNN
 	1    10300 5375
 	1    0    0    -1  
 $EndComp
-Text GLabel 10025 5275 0    60   Input ~ 0
-AUD_L
-Text GLabel 10025 5475 0    60   Input ~ 0
+Text GLabel 10025 5375 0    60   Input ~ 0
 AUD_R
 Wire Wire Line
-	10025 5475 10100 5475
-Wire Wire Line
-	10025 5275 10100 5275
+	10025 5375 10100 5375
 Text GLabel 8025 5275 0    60   Input ~ 0
 AUD_L
 $Comp
@@ -1091,9 +1064,10 @@ This section downmixes both SID outputs\ninto a single signal output on the regu
 Text Notes 7350 7500 0    60   ~ 0
 C64 Stereo SID
 Text Notes 10550 7650 0    60   ~ 0
-B
+C
 Text Notes 6975 6850 0    60   ~ 0
 There are many Stereo SID boards, but this one is mine and it's out there for all who'd\nwant one, those that don't haven't heard axelf SID file played in glorious stereo on a real\nCommodore 64.
 Text Notes 8675 4250 0    60   ~ 0
 1-2 Stereo SID\n2-3 Pseudo stareo
+NoConn ~ 6225 1425
 $EndSCHEMATC
